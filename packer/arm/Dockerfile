@@ -8,4 +8,4 @@ RUN wget -O /tmp/packer.zip \
     echo "${PACKER_SHA256}  /tmp/packer.zip" | sha256sum -c - && \
     unzip /tmp/packer.zip -d /bin/ && \
     rm /tmp/packer.zip && \
-    packer --version
+    echo "Packer version $(packer --version) successfully installed!"
