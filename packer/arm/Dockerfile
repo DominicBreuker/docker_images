@@ -1,4 +1,4 @@
-FROM arm32v7/busybox:1.29
+FROM arm32v6/alpine:3.8
 
 ARG PACKER_VERSION
 ARG PACKER_SHA256
@@ -9,3 +9,5 @@ RUN wget -O /tmp/packer.zip \
     unzip /tmp/packer.zip -d /bin/ && \
     rm /tmp/packer.zip && \
     echo "Packer version $(packer --version) successfully installed!"
+
+RUN apk add --update git bash wget openssl
